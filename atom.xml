@@ -3,11 +3,11 @@
   <title>世清の蜗居</title>
   
   <subtitle>记录生活的点滴</subtitle>
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="https://baishiqing.github.io/blog/blog/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
-  <updated>2021-12-20T07:23:58.599Z</updated>
-  <id>http://example.com/</id>
+  <link href="https://baishiqing.github.io/blog/blog/"/>
+  <updated>2021-12-21T11:32:22.563Z</updated>
+  <id>https://baishiqing.github.io/blog/blog/</id>
   
   <author>
     <name>白梓晨</name>
@@ -18,12 +18,12 @@
   
   <entry>
     <title>test</title>
-    <link href="http://example.com/2021/12/18/test/"/>
-    <id>http://example.com/2021/12/18/test/</id>
+    <link href="https://baishiqing.github.io/blog/blog/2021/12/18/test/"/>
+    <id>https://baishiqing.github.io/blog/blog/2021/12/18/test/</id>
     <published>2021-12-18T10:10:22.000Z</published>
-    <updated>2021-12-20T07:23:58.599Z</updated>
+    <updated>2021-12-21T11:32:22.563Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="this-is-a-test"><a href="#this-is-a-test" class="headerlink" title="this is a test"></a>this is a test</h2><p>写作动力：就是玩</p><p><strong>说明</strong><br>&emsp;&emsp;这是一个说明</p><blockquote><p>纸上得来终觉浅，绝知此事要躬行</p></blockquote><p><img src="https://img0.baidu.com/it/u=1985874529,2483152613&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" alt="test"><br><img src="https://img2.baidu.com/it/u=1917350432,4231958219&fm=26&fmt=auto" alt="test"></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="this-is-a-test"><a href="#this-is-a-test" class="headerlink" title="this is a test"></a>this is a test</h2><p>写作动力：就是玩</p><p><strong>说明</strong><br>&emsp;&emsp;这是一个说明</p><blockquote><p>纸上得来终觉浅，绝知此事要躬行</p></blockquote><p><img src="https://img2.baidu.com/it/u=1917350432,4231958219&fm=26&fmt=auto" alt="test"><br><img src="https://img0.baidu.com/it/u=1985874529,2483152613&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" alt="test"></p>]]></content>
     
     
       
@@ -39,8 +39,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://example.com/2021/12/18/hello-world/"/>
-    <id>http://example.com/2021/12/18/hello-world/</id>
+    <link href="https://baishiqing.github.io/blog/blog/2021/12/18/hello-world/"/>
+    <id>https://baishiqing.github.io/blog/blog/2021/12/18/hello-world/</id>
     <published>2021-12-18T10:00:03.565Z</published>
     <updated>2021-12-20T07:23:23.749Z</updated>
     
