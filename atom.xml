@@ -3,11 +3,11 @@
   <title>世清の蜗居</title>
   
   <subtitle>记录生活的点滴</subtitle>
-  <link href="https://baishiqing.github.io/blog/blog/atom.xml" rel="self"/>
+  <link href="https://baishiqing.github.io/atom.xml" rel="self"/>
   
-  <link href="https://baishiqing.github.io/blog/blog/"/>
+  <link href="https://baishiqing.github.io/"/>
   <updated>2021-12-21T11:32:22.563Z</updated>
-  <id>https://baishiqing.github.io/blog/blog/</id>
+  <id>https://baishiqing.github.io/</id>
   
   <author>
     <name>白梓晨</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>test</title>
-    <link href="https://baishiqing.github.io/blog/blog/2021/12/18/test/"/>
-    <id>https://baishiqing.github.io/blog/blog/2021/12/18/test/</id>
+    <link href="https://baishiqing.github.io/2021/12/18/test/"/>
+    <id>https://baishiqing.github.io/2021/12/18/test/</id>
     <published>2021-12-18T10:10:22.000Z</published>
     <updated>2021-12-21T11:32:22.563Z</updated>
     
@@ -39,8 +39,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="https://baishiqing.github.io/blog/blog/2021/12/18/hello-world/"/>
-    <id>https://baishiqing.github.io/blog/blog/2021/12/18/hello-world/</id>
+    <link href="https://baishiqing.github.io/2021/12/18/hello-world/"/>
+    <id>https://baishiqing.github.io/2021/12/18/hello-world/</id>
     <published>2021-12-18T10:00:03.565Z</published>
     <updated>2021-12-20T07:23:23.749Z</updated>
     
