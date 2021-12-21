@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>世清的蜗居</title>
+  <title>世清の蜗居</title>
   
-  
+  <subtitle>记录生活的点滴</subtitle>
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
