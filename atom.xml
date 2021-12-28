@@ -6,7 +6,7 @@
   <link href="https://baishiqing.github.io/atom.xml" rel="self"/>
   
   <link href="https://baishiqing.github.io/"/>
-  <updated>2021-12-22T08:47:59.131Z</updated>
+  <updated>2021-12-28T01:26:38.042Z</updated>
   <id>https://baishiqing.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>IDEA打包</title>
+    <link href="https://baishiqing.github.io/2021/12/27/IDEA%E6%89%93%E5%8C%85/"/>
+    <id>https://baishiqing.github.io/2021/12/27/IDEA%E6%89%93%E5%8C%85/</id>
+    <published>2021-12-27T07:59:41.000Z</published>
+    <updated>2021-12-28T01:26:38.042Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="IDEA打包方式：jar包与war包"><a href="#IDEA打包方式：jar包与war包" class="headerlink" title="IDEA打包方式：jar包与war包"></a>IDEA打包方式：jar包与war包</h1><p>jar包全称 Java Archive, 中文名叫 java 归档文件，这是一种与平台无关的文件格式。</p><p>war 包全称 JavaWeb Archive, 与 jar 包是类似。不过 war 包通常用于网站，它是一个可以直接运行的 web 模块。</p><p>一般主要是通过pom.xml决定你要打什么包</p><h2 id="前提知识："><a href="#前提知识：" class="headerlink" title="前提知识："></a>前提知识：</h2><ol><li>Project Structure(项目结构)</li><li>Artifacts选中Web Application: Exploded(工程组件的意思,可以理解为一个工程中的各个模块)</li><li>Archive是归档文件的意思<br><img src="https://img2020.cnblogs.com/blog/2039441/202008/2039441-20200809112949871-387777782.png" alt="编辑war包"></li></ol><h2 id="如何打包："><a href="#如何打包：" class="headerlink" title="如何打包："></a>如何打包：</h2><ul><li><p>无maven仓库：</p><ol><li>Project Structure-&gt;Artifacts-&gt;add Web Application:Exploded(若运行过IDEA项目，这一步可以忽略)</li><li>Project Structure-&gt;Artifacts-&gt;add Web Application:Archive</li><li>修改war包的一些属性<br><img src="https://img2020.cnblogs.com/blog/2039441/202008/2039441-20200809112307743-1658509635.png" alt="Artifacts"><ul><li>Name:是war包的名字，可以随意定义</li><li>Type:是类型，这里是Archive的类型，也就是war包的类型</li><li>Output directory:是war包存储的位置，可以随意修改</li><li>Include in project build:如果把这个选项勾选，重新编译了之后，war包也会同步更新修改</li><li>Output Layout:是输出布局，也就是war包的目录结构</li></ul></li><li>Build-&gt;Build Artifacts-&gt;选中对应的war包-&gt;Build<br><img src="https://img2020.cnblogs.com/blog/2039441/202008/2039441-20200809112949871-387777782.png" alt="编译war包"><br><img src="https://img2020.cnblogs.com/blog/2039441/202008/2039441-20200809113917899-1493076746.png" alt="编译war包2"><ul><li>All Artifact:对所有模块进行操作</li><li>Build:进行编译打包</li><li>Rebuild:重现编译打包，会删除原来的war包，然后编译打包</li><li>Clean:清除war包</li><li>Edit:重新编辑war包的设置</li></ul></li></ol></li><li><p>有maven仓库：</p><ol><li>在IDEA界面的右边点击Maven-&gt;Lifecycle-&gt;clean-&gt;install</li><li>在控制台查看信息出现 BUILD SUCCESS 则打包成功</li><li>查看项目结构下会出现 target 文件夹(文件夹下的包需要看pom.xml)</li></ol></li></ul><h2 id="如何部署war包："><a href="#如何部署war包：" class="headerlink" title="如何部署war包："></a>如何部署war包：</h2><ol><li>在输出文件夹查看war包</li><li>将war包放到tomcat的webapps文件夹中(默认tomcat的conf文件夹下的server.xml配置)</li><li>进入Tomcat目录下的bin文件夹，双击运行startup.bat</li><li>在浏览器输入<a href="http://localhost:8080/war%E5%8C%85%E5%90%8D%E7%A7%B0">http://localhost:8080/war包名称</a></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;IDEA打包方式：jar包与war包&quot;&gt;&lt;a href=&quot;#IDEA打包方式：jar包与war包&quot; class=&quot;headerlink&quot; title=&quot;IDEA打包方式：jar包与war包&quot;&gt;&lt;/a&gt;IDEA打包方式：jar包与war包&lt;/h1&gt;&lt;p&gt;jar包全称</summary>
+      
+    
+    
+    
+    <category term="学习" scheme="https://baishiqing.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="编程" scheme="https://baishiqing.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>一看就懂的md语法</title>
@@ -80,9 +104,9 @@
     <link href="https://baishiqing.github.io/2021/12/18/hello-world/"/>
     <id>https://baishiqing.github.io/2021/12/18/hello-world/</id>
     <published>2021-12-18T10:00:03.565Z</published>
-    <updated>2021-12-22T03:52:28.080Z</updated>
+    <updated>2021-12-27T08:07:09.376Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.<br> <span id="more"></span></p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p><h3 id="简写"><a href="#简写" class="headerlink" title="简写"></a>简写</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.<br> <span id="more"></span></p><h1 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h1><h2 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure><p>另起一页</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page board</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h2 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h2 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h2 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a>s</p><h2 id="简写"><a href="#简写" class="headerlink" title="简写"></a>简写</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>]]></content>
     
     
     <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;br&gt;</summary>
