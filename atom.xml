@@ -6,7 +6,7 @@
   <link href="https://baishiqing.github.io/atom.xml" rel="self"/>
   
   <link href="https://baishiqing.github.io/"/>
-  <updated>2021-12-31T01:35:08.641Z</updated>
+  <updated>2021-12-31T07:22:25.005Z</updated>
   <id>https://baishiqing.github.io/</id>
   
   <author>
@@ -15,6 +15,48 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数学建模总结</title>
+    <link href="https://baishiqing.github.io/2021/12/31/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E6%80%BB%E7%BB%93/"/>
+    <id>https://baishiqing.github.io/2021/12/31/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E6%80%BB%E7%BB%93/</id>
+    <published>2021-12-31T07:10:52.000Z</published>
+    <updated>2021-12-31T07:22:25.005Z</updated>
+    
+    
+    
+    
+    <category term="学习" scheme="https://baishiqing.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="数学建模" scheme="https://baishiqing.github.io/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>时间序列问题</title>
+    <link href="https://baishiqing.github.io/2021/12/31/%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E9%97%AE%E9%A2%98/"/>
+    <id>https://baishiqing.github.io/2021/12/31/%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E9%97%AE%E9%A2%98/</id>
+    <published>2021-12-31T07:08:14.000Z</published>
+    <updated>2021-12-31T09:06:23.621Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>时间序列过程是按时间排序的随机变量的集合，这个随机过程可以表示为<br>$${X_t|t \in T}$$</p><h3 id="符号定义"><a href="#符号定义" class="headerlink" title="符号定义"></a>符号定义</h3><ul><li>$T$是决定<strong>时序过程</strong>以及<strong>产生观测值</strong>的一个时间集合,</li><li>随机变量(Random variables)用大写字母表示，即$X_t$</li><li>观测值(Observations)用小写字母表示，即$x_t$</li></ul><h2 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h2><ul><li>描述过去</li><li>分析规律</li><li>预测未来</li></ul><h2 id="建模"><a href="#建模" class="headerlink" title="建模"></a>建模</h2><h3 id="平稳序列"><a href="#平稳序列" class="headerlink" title="平稳序列"></a>平稳序列</h3><p>序列中的各观察值基本上在某个固定的水平随机波动</p><h3 id="非平稳序列"><a href="#非平稳序列" class="headerlink" title="非平稳序列"></a>非平稳序列</h3><ul><li>趋势（Trend）:时间序列数据均值随时间的长期持续变化</li><li>季节性影响（Seasonal effect）:以固定间隔重复的周期性波动</li><li>循环波动（cyclical fluctuation）：围绕长期趋势的一种波浪式或振荡式波动</li><li>无法解释的变化（Unexplained variation）:无法解释的变化是在任何趋势和季节性变化被去除后时间序列中其余的变化</li></ul><p>加法模型（Additive）：<br>$$X_t=m_t+s_t+e_t$$<br>乘法模型（Multiplicative）：<br>$$X_t=m_t<em>s_t</em>e_t$$<br>其中$m_t$表示趋势，$s_t$表示季节，$e_t$表示无法解释的变化。<br>ps:当趋势和季节性变化独立作用时，加法模型是合适的，而如果季节性效应的大小取决于趋势的大小，则需要乘法模型。</p><h2 id="数据分析"><a href="#数据分析" class="headerlink" title="数据分析"></a>数据分析</h2><ul><li>均值</li><li>方差，标准差</li><li>自协方差(autocovariance function (ACVF))</li><li>自相关函数(autocorrelation function (ACF))</li></ul><p>后两条可衡量线性的相关性，“auto”前缀表示不同时间点的随机变量的测量属性都存在。相关性是介于 -1 和 1 之间的协方差的缩放表现，其中 1 表示强正相关，0 表示独立性，-1 表示强负相关。</p><h3 id="图例："><a href="#图例：" class="headerlink" title="图例："></a>图例：</h3><ul><li><p>考虑由纯随机过程 生成的时间序列，它没有趋势、季节性或短期相关性<br><img src="https://s4.ax1x.com/2021/12/31/Thb1SK.jpg" alt="purely random data"></p></li><li><p>没有趋势或季节性但具有短期相关性的时间序列数据;在前几个滞后时具有显着正的自相关，随后在较大滞后时值接近零<br><img src="https://s4.ax1x.com/2021/12/31/Thb4pV.jpg" alt="short-term correlation"></p></li><li><p>没有趋势或季节性但在大值和小值之间交替的时间序列数据;在奇数滞后时具有负自相关，在偶数滞后时具有正自相关。随着滞后的增加，自相关越来越接近于零<br><img src="https://s2.loli.net/2021/12/31/gO9zhqNx2UZ8Qpi.jpg" alt="alternating data"></p></li><li><p>具有趋势的时间序列数据如下图所示，并且在滞后偏大时仍然具有正自相关。如果趋势随时间下降，则会观察到相同的相关图<br><img src="https://s4.ax1x.com/2021/12/31/ThqP7d.jpg" alt="data with a trend"></p></li><li><p>具有季节性影响的时间序列数据如下图所示，并且在相关图中具有规则的季节性模式。<br><img src="https://s4.ax1x.com/2021/12/31/ThqZ1f.jpg" alt="data with a seasonal effect">]</p></li><li><p>具有趋势和季节性影响的时间序列数据显示在下图中，并且在相关图中具有规则的季节性模式，由于趋势的存在，相关图通常具有正值。<br><img src="https://s4.ax1x.com/2021/12/31/Thq1Nn.jpg" alt="data with a trend and a seasonal effect">]</p></li></ul><h2 id="预测时间序列程序"><a href="#预测时间序列程序" class="headerlink" title="预测时间序列程序"></a>预测时间序列程序</h2><ol><li><p>确定时间序列成分</p></li><li><p>选择预测方法</p></li><li><p>预测方法的评估</p></li><li><p>预测数据序列</p></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h2&gt;&lt;p&gt;时间序列过程是按时间排序的随机变量的集合，这个随机过程可以表示为&lt;br&gt;$${X_t|t \in T}$$&lt;/p&gt;
+&lt;h3 id=&quot;符号定义</summary>
+      
+    
+    
+    
+    <category term="学习" scheme="https://baishiqing.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="网络结构" scheme="https://baishiqing.github.io/tags/%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
   
   <entry>
     <title>学习Pytorch</title>
@@ -105,7 +147,7 @@
     <link href="https://baishiqing.github.io/2021/12/22/blogSetting/"/>
     <id>https://baishiqing.github.io/2021/12/22/blogSetting/</id>
     <published>2021-12-22T03:50:27.000Z</published>
-    <updated>2021-12-24T02:13:28.145Z</updated>
+    <updated>2021-12-31T07:21:57.208Z</updated>
     
     <content type="html"><![CDATA[<p>废话不多说，我们直接开整<br> <span id="more"></span></p><h1 id="设置博客摘要显示"><a href="#设置博客摘要显示" class="headerlink" title="设置博客摘要显示"></a>设置博客摘要显示</h1><p>修改主题配置文件，注意是theme文件夹下的：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Automatically scroll page to section which is under &lt;!-- more --&gt; mark.</span></span><br><span class="line">scroll_to_more: <span class="literal">true</span> <span class="comment">#选取博客正文&lt;!--more--&gt;前的内容</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Automatically saving scroll position on each post/page in cookies.</span></span><br><span class="line">save_scroll: <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Automatically excerpt description in homepage as preamble text.</span></span><br><span class="line">excerpt_description: <span class="literal">true</span> <span class="comment">#自动截取摘要</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Automatically Excerpt. Not recommend.</span></span><br><span class="line"><span class="comment"># Use &lt;!-- more --&gt; in the post to control excerpt accurately.</span></span><br><span class="line">auto_excerpt: </span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">false</span> <span class="comment">#自动截取一定程度的摘要</span></span><br><span class="line">  length: 150</span><br><span class="line"></span><br><span class="line"><span class="comment"># Read more button</span></span><br><span class="line"><span class="comment"># If true, the read more button would be displayed in excerpt section.</span></span><br><span class="line">read_more_btn: <span class="literal">true</span> <span class="comment">#显示阅读全文按钮</span></span><br></pre></td></tr></table></figure><p><strong>记得在博客内容中加入：</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- more --&gt;</span><br></pre></td></tr></table></figure><h1 id="设置博客动态背景"><a href="#设置博客动态背景" class="headerlink" title="设置博客动态背景"></a>设置博客动态背景</h1><ol><li>修改_layout.swig文件</li></ol><p>打开 hexo-theme-next/layout/_layout.swig,在<code>&lt;body&gt;</code>中添加代码</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% <span class="keyword">if</span> theme.canvas_nest %&#125;</span><br><span class="line">&lt;script <span class="built_in">type</span>=<span class="string">&quot;text/javascript&quot;</span> src=<span class="string">&quot;//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure><ol start="2"><li>修改主题配置文件</li></ol><p>打开 /hexo-theme-next/_config.yml,在里面添加如下代码</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># --------------------------------------------------------------</span></span><br><span class="line"><span class="comment"># background settings</span></span><br><span class="line"><span class="comment"># --------------------------------------------------------------</span></span><br><span class="line"><span class="comment"># add canvas-nest effect</span></span><br><span class="line"><span class="comment"># see detail from https://github.com/hustcc/canvas-nest.js</span></span><br><span class="line">canvas_nest: <span class="literal">true</span></span><br></pre></td></tr></table></figure><h1 id="设置博客评论功能"><a href="#设置博客评论功能" class="headerlink" title="设置博客评论功能"></a>设置博客评论功能</h1><p>这里用的是<strong>来必力</strong>评论，支持多方登录评论</p><ol><li>注册并登录<a href="https://www.livere.com/">来必力</a>网站(只显示韩文)</li><li>点击网站中的安装，选择City版免费的，安装会跳转到安装代码<img src="https://img-blog.csdnimg.cn/dd54a22534a2446089ddf640dd71d797.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAYmxhY2tzdW5kYXky,size_20,color_FFFFFF,t_70,g_se,x_16" alt="安装代码"></li><li>复制uid，打开主题配置文件_config.yml，搜索livere_uid，把uid填进去</li></ol><h1 id="设置页面宠物"><a href="#设置页面宠物" class="headerlink" title="设置页面宠物"></a>设置页面宠物</h1><p>1.在博客根目录下执行：</p><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">npm</span> install -save hexo-helper-live<span class="number">2</span>d</span><br><span class="line"><span class="attribute">npm</span> install live<span class="number">2</span>d-widget-model-wanko</span><br></pre></td></tr></table></figure><p><strong>第一行是下载live2d插件，第二行是下载wanko这个宠物</strong><p><br><em>其中可能会遇到版本报错，不用理会即可</em><p><br>2.在站点配置文件中加入：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">live2d:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">scriptFrom:</span> <span class="string">local</span></span><br><span class="line">  <span class="attr">pluginRootPath:</span> <span class="string">live2dw/</span></span><br><span class="line">  <span class="attr">pluginJsPath:</span> <span class="string">lib/</span></span><br><span class="line">  <span class="attr">pluginModelPath:</span> <span class="string">assets/</span></span><br><span class="line">  <span class="attr">tagMode:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">model:</span></span><br><span class="line">    <span class="attr">use:</span> <span class="string">live2d-widget-model-wanko</span>  <span class="comment">#选择哪种模型</span></span><br><span class="line">  <span class="attr">display:</span> <span class="comment">#放置位置和大小</span></span><br><span class="line">    <span class="attr">position:</span> <span class="string">right</span></span><br><span class="line">    <span class="attr">width:</span> <span class="number">150</span></span><br><span class="line">    <span class="attr">height:</span> <span class="number">300</span></span><br><span class="line">  <span class="attr">mobile:</span></span><br><span class="line">    <span class="attr">show:</span> <span class="literal">false</span> <span class="comment">#是否在手机端显示</span></span><br></pre></td></tr></table></figure><blockquote><p>友情提示：由于github访问问题，在执行hexo d之后页面仍然没有效果，可以使用hexo s现在本地查看。</p></blockquote>]]></content>
     
@@ -116,8 +158,10 @@
     
     <category term="学习" scheme="https://baishiqing.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
     
+    <category term="娱乐" scheme="https://baishiqing.github.io/categories/%E5%AD%A6%E4%B9%A0/%E5%A8%B1%E4%B9%90/"/>
     
-    <category term="文件设置" scheme="https://baishiqing.github.io/tags/%E6%96%87%E4%BB%B6%E8%AE%BE%E7%BD%AE/"/>
+    
+    <category term="基础知识" scheme="https://baishiqing.github.io/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
     
   </entry>
   
@@ -126,7 +170,7 @@
     <link href="https://baishiqing.github.io/2021/12/18/test/"/>
     <id>https://baishiqing.github.io/2021/12/18/test/</id>
     <published>2021-12-18T10:10:22.000Z</published>
-    <updated>2021-12-22T03:57:54.876Z</updated>
+    <updated>2021-12-31T07:21:13.896Z</updated>
     
     <content type="html"><![CDATA[<h2 id="this-is-a-test"><a href="#this-is-a-test" class="headerlink" title="this is a test"></a>this is a test</h2><p>写作动力：就是玩</p><span id="more"></span><p><strong>说明</strong><br>&emsp;&emsp;这是一个说明</p><blockquote><p>纸上得来终觉浅，绝知此事要躬行</p></blockquote><p><img src="https://img2.baidu.com/it/u=1917350432,4231958219&fm=26&fmt=auto" alt="test"><br><img src="https://img0.baidu.com/it/u=1985874529,2483152613&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" alt="test"></p>]]></content>
     
@@ -135,6 +179,10 @@
     
     
     
+    <category term="娱乐" scheme="https://baishiqing.github.io/categories/%E5%A8%B1%E4%B9%90/"/>
+    
+    
+    <category term="test" scheme="https://baishiqing.github.io/tags/test/"/>
     
   </entry>
   
