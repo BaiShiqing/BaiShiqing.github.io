@@ -286,7 +286,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-01-03 14:58:17" itemprop="dateModified" datetime="2022-01-03T14:58:17+08:00">2022-01-03</time>
+                <time title="修改时间：2022-01-03 15:19:10" itemprop="dateModified" datetime="2022-01-03T15:19:10+08:00">2022-01-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -321,65 +321,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-           <span id="more"></span>
-<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>时间序列过程是按时间排序的随机变量的集合，这个随机过程可以表示为</p>
-<script type="math/tex; mode=display">\{X_t|t \in T\}</script><h3 id="符号定义"><a href="#符号定义" class="headerlink" title="符号定义"></a>符号定义</h3><ul>
-<li>$T$是决定<strong>时序过程</strong>以及<strong>产生观测值</strong>的一个时间集合,</li>
-<li>随机变量(Random variables)用大写字母表示，即$X_t$</li>
-<li>观测值(Observations)用小写字母表示，即$x_t$</li>
-</ul>
-<h2 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h2><ul>
-<li>描述过去</li>
-<li>分析规律</li>
-<li>预测未来</li>
-</ul>
-<h2 id="建模"><a href="#建模" class="headerlink" title="建模"></a>建模</h2><h3 id="平稳序列"><a href="#平稳序列" class="headerlink" title="平稳序列"></a>平稳序列</h3><p>序列中的各观察值基本上在某个固定的水平随机波动</p>
-<h3 id="非平稳序列"><a href="#非平稳序列" class="headerlink" title="非平稳序列"></a>非平稳序列</h3><ul>
-<li>趋势（Trend）:时间序列数据均值随时间的长期持续变化</li>
-<li>季节性影响（Seasonal effect）:以固定间隔重复的周期性波动</li>
-<li>循环波动（cyclical fluctuation）：围绕长期趋势的一种波浪式或振荡式波动</li>
-<li>无法解释的变化（Unexplained variation）:无法解释的变化是在任何趋势和季节性变化被去除后时间序列中其余的变化</li>
-</ul>
-<p>加法模型（Additive）：</p>
-<script type="math/tex; mode=display">X_t=m_t+s_t+e_t</script><p>乘法模型（Multiplicative）：</p>
-<script type="math/tex; mode=display">X_t=m_t*s_t*e_t</script><p>其中$m_t$表示趋势，$s_t$表示季节，$e_t$表示无法解释的变化。<br>ps:当趋势和季节性变化独立作用时，加法模型是合适的，而如果季节性效应的大小取决于趋势的大小，则需要乘法模型。</p>
-<h2 id="数据分析"><a href="#数据分析" class="headerlink" title="数据分析"></a>数据分析</h2><ul>
-<li>均值</li>
-<li>方差，标准差</li>
-<li>自协方差(autocovariance function (ACVF))</li>
-<li>自相关函数(autocorrelation function (ACF))</li>
-</ul>
-<p>后两条可衡量线性的相关性，“auto”前缀表示不同时间点的随机变量的测量属性都存在。相关性是介于 -1 和 1 之间的协方差的缩放表现，其中 1 表示强正相关，0 表示独立性，-1 表示强负相关。</p>
-<h3 id="图例："><a href="#图例：" class="headerlink" title="图例："></a>图例：</h3><ul>
-<li><p>考虑由纯随机过程 生成的时间序列，它没有趋势、季节性或短期相关性<br><img src="https://s4.ax1x.com/2021/12/31/Thb1SK.jpg" alt="purely random data"></p>
-</li>
-<li><p>没有趋势或季节性但具有短期相关性的时间序列数据;在前几个滞后时具有显着正的自相关，随后在较大滞后时值接近零<br><img src="https://s4.ax1x.com/2021/12/31/Thb4pV.jpg" alt="short-term correlation"></p>
-</li>
-<li><p>没有趋势或季节性但在大值和小值之间交替的时间序列数据;在奇数滞后时具有负自相关，在偶数滞后时具有正自相关。随着滞后的增加，自相关越来越接近于零<br><img src="https://s2.loli.net/2021/12/31/gO9zhqNx2UZ8Qpi.jpg" alt="alternating data"></p>
-</li>
-<li><p>具有趋势的时间序列数据如下图所示，并且在滞后偏大时仍然具有正自相关。如果趋势随时间下降，则会观察到相同的相关图<br><img src="https://s4.ax1x.com/2021/12/31/ThqP7d.jpg" alt="data with a trend"></p>
-</li>
-<li><p>具有季节性影响的时间序列数据如下图所示，并且在相关图中具有规则的季节性模式。<br><img src="https://s4.ax1x.com/2021/12/31/ThqZ1f.jpg" alt="data with a seasonal effect">]</p>
-</li>
-<li><p>具有趋势和季节性影响的时间序列数据显示在下图中，并且在相关图中具有规则的季节性模式，由于趋势的存在，相关图通常具有正值。<br><img src="https://s4.ax1x.com/2021/12/31/Thq1Nn.jpg" alt="data with a trend and a seasonal effect">]</p>
-</li>
-</ul>
-<h2 id="预测时间序列程序"><a href="#预测时间序列程序" class="headerlink" title="预测时间序列程序"></a>预测时间序列程序</h2><ol>
-<li><p>确定时间序列成分</p>
-<ol>
-<li><p>确定趋势成分</p>
-<p> 确定趋势成分是否存在，可<strong>绘制时间序列的线图</strong>，看时间序列是否存在趋势，以及存在趋势是线性还是非线性。利用回归分析拟合一条趋势线，对回归系数进行显著性检验。回归系数显著，可得出线性趋势显著的结论。<br> <em>代码待定</em></p>
-</li>
-<li><p>确定季节成分</p>
-<p> 确定季节成分是否存在，至少需要两年数据，且数据需要按季度、月份、周或天来记录。可绘制<strong>年度折叠时间序列图</strong>（folded annual time series plot），需要将每年的数据分开画在图上，横轴只有一年的长度，每年的数据分别对应纵轴。如果时间序列<strong>只存在</strong>季节成分，年度折叠时间序列图中的折线将<strong>会有交叉</strong>；如果时间序列既含有季节成分又含有趋势，则年度折叠时间序列图中的折线将不会有交叉。</p>
-</li>
-</ol>
-</li>
-<li>选择预测方法</li>
-<li>预测方法的评估</li>
-<li>预测数据序列</li>
-</ol>
-
+          <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/12/31/%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E9%97%AE%E9%A2%98/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
