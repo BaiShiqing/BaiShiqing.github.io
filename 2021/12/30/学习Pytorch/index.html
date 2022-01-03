@@ -77,7 +77,11 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="世清の蜗居" type="application/atom+xml">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="世清の蜗居" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -132,7 +136,7 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">3</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">2</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
@@ -243,9 +247,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><a target="_blank" rel="noopener" href="https://handbook.pytorch.wiki/index.html">Pytorch中文百科</a></p>
-<span id="more"></span>
-
+        <p><a target="_blank" rel="noopener" href="https://handbook.pytorch.wiki/index.html">Pytorch中文百科</a><br><span id="more"></span></p>
 <p><a target="_blank" rel="noopener" href="https://tangshusen.me/Dive-into-DL-PyTorch/#/">Dive into DL Pytorch</a><p></p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://blog.csdn.net/pan_andy/article/details/100992584">博客综述</a></li>
@@ -253,7 +255,8 @@
 </ul>
 <h2 id="PyTorch代码段合集"><a href="#PyTorch代码段合集" class="headerlink" title="PyTorch代码段合集"></a>PyTorch代码段合集</h2><ul>
 <li><p>版本查询</p>
-  <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">print</span><span class="params">(torch.__version__)</span></span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(torch.version.cuda)</span></span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(torch.backends.cudnn.version()</span></span>)</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(torch.cuda.get_device_name(<span class="number">0</span>)</span></span>)</span><br></pre></td></tr></table></figure></li>
+  <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">print</span><span class="params">(torch.__version__)</span></span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(torch.version.cuda)</span></span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(torch.backends.cudnn.version()</span></span>)</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(torch.cuda.get_device_name(<span class="number">0</span>)</span></span>)</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>显卡设置</p>
 <ul>
 <li>单张显卡:<br><code>device = torch.device(&#39;cuda&#39; if torch.cuda.is_available() else &#39;cpu&#39;)</code></li>
@@ -433,7 +436,7 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -575,6 +578,8 @@
 
 
 
+
+  
 
   
 

@@ -82,7 +82,11 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="世清の蜗居" type="application/atom+xml">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="世清の蜗居" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -137,7 +141,7 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">3</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">2</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
@@ -256,8 +260,7 @@
 <h2 id="InceptionV2"><a href="#InceptionV2" class="headerlink" title="InceptionV2"></a>InceptionV2</h2><p>改进：</p>
 <ul>
 <li>加入BN(Batch Normalization)层：通过Reduce Internal Covariate Shift(减少内部数据分布发生变化，使每一层的输出都规范化到一个N(0, 1)的高斯);</li>
-<li>使用2个3x3替代1个5x5卷积(既降低了参数数量，也加速计算)。<br><img src="https://www.pianshen.com/images/123/285d1cc3258f37d0e9679049734f0543.png" alt="InceptionV2"></li>
-<li><em>代表作：改进版GoogleNet</em>*</li>
+<li>使用2个3x3替代1个5x5卷积(既降低了参数数量，也加速计算)。<br><img src="https://www.pianshen.com/images/123/285d1cc3258f37d0e9679049734f0543.png" alt="InceptionV2"><br><strong>代表作：改进版GoogleNet</strong></li>
 </ul>
 <h2 id="InceptionV3"><a href="#InceptionV3" class="headerlink" title="InceptionV3"></a>InceptionV3</h2><p>改进：</p>
 <ul>
@@ -275,8 +278,8 @@
 <li>通道分离式卷积：<br><img src="https://img-blog.csdn.net/20170915103536111" alt="Xception"><br>更改卷积操作顺序：Inception V3是先做1x1的通道卷积，再做3x3的空间卷积，这样就先将通道进行了合并;而Xception则正好相反，先进行空间的3x3卷积，再进行通道的1x1卷积</li>
 <li>Xception在每个module中是没有RELU操作的</li>
 </ul>
-<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/25f0139637b7">数学公式md语法</a><br>$$H_{out}=\lfloor \frac{H_{in}+2<em>padding[0]-dilation[0]</em>(kernel_size[0]-1)-1}{stride[0]}+1 \rfloor$$</p>
-<p>一般来说，默认padding=0,dilation=1,stride=1:<br>$H_{out}=H_{in}-kernel_size+1$</p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/25f0139637b7">数学公式md语法</a></p>
+<script type="math/tex; mode=display">H_{out}=\lfloor \frac{H_{in}+2*padding[0]-dilation[0]*(kernel\_size[0]-1)-1}{stride[0]}+1 \rfloor</script><p>一般来说，默认padding=0,dilation=1,stride=1:<br>$H<em>{out}=H</em>{in}-kernel_size+1$</p>
 
     </div>
 
@@ -442,7 +445,7 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -584,6 +587,8 @@
 
 
 
+
+  
 
   
 

@@ -74,7 +74,11 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="世清の蜗居" type="application/atom+xml">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="世清の蜗居" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -129,7 +133,7 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">3</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">2</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
@@ -282,7 +286,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-01-03 13:25:31" itemprop="dateModified" datetime="2022-01-03T13:25:31+08:00">2022-01-03</time>
+                <time title="修改时间：2022-01-03 14:58:17" itemprop="dateModified" datetime="2022-01-03T14:58:17+08:00">2022-01-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -319,8 +323,7 @@
       
            <span id="more"></span>
 <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>时间序列过程是按时间排序的随机变量的集合，这个随机过程可以表示为</p>
-<p>$${X_t|t \in T}$$</p>
-<h3 id="符号定义"><a href="#符号定义" class="headerlink" title="符号定义"></a>符号定义</h3><ul>
+<script type="math/tex; mode=display">\{X_t|t \in T\}</script><h3 id="符号定义"><a href="#符号定义" class="headerlink" title="符号定义"></a>符号定义</h3><ul>
 <li>$T$是决定<strong>时序过程</strong>以及<strong>产生观测值</strong>的一个时间集合,</li>
 <li>随机变量(Random variables)用大写字母表示，即$X_t$</li>
 <li>观测值(Observations)用小写字母表示，即$x_t$</li>
@@ -337,7 +340,9 @@
 <li>循环波动（cyclical fluctuation）：围绕长期趋势的一种波浪式或振荡式波动</li>
 <li>无法解释的变化（Unexplained variation）:无法解释的变化是在任何趋势和季节性变化被去除后时间序列中其余的变化</li>
 </ul>
-<p>加法模型（Additive）：<br>$$X_t=m_t+s_t+e_t$$<br>乘法模型（Multiplicative）：<br>$$X_t=m_t<em>s_t</em>e_t$$<br>其中$m_t$表示趋势，$s_t$表示季节，$e_t$表示无法解释的变化。<br>ps:当趋势和季节性变化独立作用时，加法模型是合适的，而如果季节性效应的大小取决于趋势的大小，则需要乘法模型。</p>
+<p>加法模型（Additive）：</p>
+<script type="math/tex; mode=display">X_t=m_t+s_t+e_t</script><p>乘法模型（Multiplicative）：</p>
+<script type="math/tex; mode=display">X_t=m_t*s_t*e_t</script><p>其中$m_t$表示趋势，$s_t$表示季节，$e_t$表示无法解释的变化。<br>ps:当趋势和季节性变化独立作用时，加法模型是合适的，而如果季节性效应的大小取决于趋势的大小，则需要乘法模型。</p>
 <h2 id="数据分析"><a href="#数据分析" class="headerlink" title="数据分析"></a>数据分析</h2><ul>
 <li>均值</li>
 <li>方差，标准差</li>
@@ -360,9 +365,14 @@
 </li>
 </ul>
 <h2 id="预测时间序列程序"><a href="#预测时间序列程序" class="headerlink" title="预测时间序列程序"></a>预测时间序列程序</h2><ol>
-<li>确定时间序列成分<ol>
-<li>确定趋势成分 确定趋势成分是否存在，可<strong>绘制时间序列的线图</strong>，看时间序列是否存在趋势，以及存在趋势是线性还是非线性。利用回归分析拟合一条趋势线，对回归系数进行显著性检验。回归系数显著，可得出线性趋势显著的结论。<br> <em>代码待定</em></li>
-<li>确定季节成分 确定季节成分是否存在，至少需要两年数据，且数据需要按季度、月份、周或天来记录。可绘制<strong>年度折叠时间序列图</strong>（folded annual time series plot），需要将每年的数据分开画在图上，横轴只有一年的长度，每年的数据分别对应纵轴。如果时间序列<strong>只存在</strong>季节成分，年度折叠时间序列图中的折线将<strong>会有交叉</strong>；如果时间序列既含有季节成分又含有趋势，则年度折叠时间序列图中的折线将不会有交叉。</li>
+<li><p>确定时间序列成分</p>
+<ol>
+<li><p>确定趋势成分</p>
+<p> 确定趋势成分是否存在，可<strong>绘制时间序列的线图</strong>，看时间序列是否存在趋势，以及存在趋势是线性还是非线性。利用回归分析拟合一条趋势线，对回归系数进行显著性检验。回归系数显著，可得出线性趋势显著的结论。<br> <em>代码待定</em></p>
+</li>
+<li><p>确定季节成分</p>
+<p> 确定季节成分是否存在，至少需要两年数据，且数据需要按季度、月份、周或天来记录。可绘制<strong>年度折叠时间序列图</strong>（folded annual time series plot），需要将每年的数据分开画在图上，横轴只有一年的长度，每年的数据分别对应纵轴。如果时间序列<strong>只存在</strong>季节成分，年度折叠时间序列图中的折线将<strong>会有交叉</strong>；如果时间序列既含有季节成分又含有趋势，则年度折叠时间序列图中的折线将不会有交叉。</p>
+</li>
 </ol>
 </li>
 <li>选择预测方法</li>
@@ -459,7 +469,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><a target="_blank" rel="noopener" href="https://handbook.pytorch.wiki/index.html">Pytorch中文百科</a></p>
+          <p><a target="_blank" rel="noopener" href="https://handbook.pytorch.wiki/index.html">Pytorch中文百科</a><br>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/12/30/%E5%AD%A6%E4%B9%A0Pytorch/#more" rel="contents">
@@ -729,7 +739,7 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>1k</span>
+              <span>999</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -810,7 +820,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-31 15:21:57" itemprop="dateModified" datetime="2021-12-31T15:21:57+08:00">2021-12-31</time>
+                <time title="修改时间：2022-01-03 14:57:33" itemprop="dateModified" datetime="2022-01-03T14:57:33+08:00">2022-01-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -819,10 +829,6 @@
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%AD%A6%E4%B9%A0/%E5%A8%B1%E4%B9%90/" itemprop="url" rel="index"><span itemprop="name">娱乐</span></a>
                 </span>
             </span>
 
@@ -947,7 +953,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="this-is-a-test"><a href="#this-is-a-test" class="headerlink" title="this is a test"></a>this is a test</h2><p>写作动力：就是玩</p>
+          <h2 id="this-is-a-test"><a href="#this-is-a-test" class="headerlink" title="this is a test"></a>this is a test</h2><p>写作动力：就是玩<br>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/12/18/test/#more" rel="contents">
@@ -1142,7 +1148,7 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -1286,6 +1292,61 @@
 
 
   
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
