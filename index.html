@@ -138,7 +138,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">10</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">11</span></a>
 
   </li>
         <li class="menu-item menu-item-commonweal">
@@ -171,6 +171,91 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://baishiqing.github.io/2022/01/08/AI%E7%AE%97%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/sakula.jpg">
+      <meta itemprop="name" content="白梓晨">
+      <meta itemprop="description" content="世清的个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世清の蜗居">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/08/AI%E7%AE%97%E6%B3%95/" class="post-title-link" itemprop="url">AI算法</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-01-08 10:48:05 / 修改时间：11:14:01" itemprop="dateCreated datePublished" datetime="2022-01-08T10:48:05+08:00">2022-01-08</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>9</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a target="_blank" rel="noopener" href="http://www.huaxiaozhuan.com">AI算法工程师手册</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+   
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://baishiqing.github.io/2022/01/03/%E9%99%8D%E7%BB%B4%E7%AE%97%E6%B3%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -194,10 +279,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-01-03 16:18:14 / 修改时间：17:25:52" itemprop="dateCreated datePublished" datetime="2022-01-03T16:18:14+08:00">2022-01-03</time>
+              <time title="创建时间：2022-01-03 16:18:14" itemprop="dateCreated datePublished" datetime="2022-01-03T16:18:14+08:00">2022-01-03</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-01-07 21:02:38" itemprop="dateModified" datetime="2022-01-07T21:02:38+08:00">2022-01-07</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -231,35 +322,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-           <span id="more"></span>
-<h1 id="PCA主成分分析算法-Principal-Components-Analysis"><a href="#PCA主成分分析算法-Principal-Components-Analysis" class="headerlink" title="PCA主成分分析算法(Principal Components Analysis)"></a>PCA主成分分析算法(Principal Components Analysis)</h1><h2 id="定义："><a href="#定义：" class="headerlink" title="定义："></a>定义：</h2><p>通过<strong>正交线性组合</strong>方式，<strong>最大化保留样本间方差</strong>的<strong>降维</strong>方法</p>
-<h2 id="性质："><a href="#性质：" class="headerlink" title="性质："></a>性质：</h2><ul>
-<li>线性映射<ul>
-<li>所有样本点到超平面的距离最近</li>
-<li>样本点在这个超平面的投影尽可能分散：为了找到合适的基向量</li>
-</ul>
-</li>
-<li>非监督</li>
-<li>全局</li>
-</ul>
-<p>名词解释：</p>
-<ul>
-<li>降维：将样本原来的m维特征用更少的k个特征取代。降维算法可以理解成一种数据压缩方法，它可能会丢失一些信息。</li>
-<li>正交线性组合：k个新特征是通过对m个旧特征进行线性组合产生的，并且k个线性组合的系数向量为单位向量，且彼此相互正交。</li>
-<li>最大化保留样本间方差：选取数据离散程度最大的方向(方差最大的方向)作为第一主成分，第二主成分选择方差次大的方向，并且与第一个主成分正交。重复这个过程直到找到k个主成分。</li>
-</ul>
-<p><em>ps：用几何观点来看，PCA可以看成：通过正交变换对坐标系进行旋转和平移，并保留样本点投影坐标方差最大的前几个新的坐标。</em></p>
-<h2 id="作用："><a href="#作用：" class="headerlink" title="作用："></a>作用：</h2><p>以较低的信息损失(以样本间分布方差衡量)减少特征数量。分析样本中分布差异最大的成分(主成分)，有助于数据可视化(降低到2维或3维后可以用散点图可视化)。</p>
-<h2 id="举例说明："><a href="#举例说明：" class="headerlink" title="举例说明："></a>举例说明：</h2><p>调用sklearn中的PCA降维算法接口对波士顿房价数,将13维降到7维:<br>首先要对样本进行平移使其重心在原点，并且消除不同特征数值大小的影响，转换为统一量纲：</p>
-<ul>
-<li>加载数据集  <figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="title">from</span> sklearn <span class="keyword">import</span> datasets</span><br><span class="line"></span><br><span class="line"><span class="title">boston</span> = datasets.load_boston()</span><br><span class="line"><span class="title">dfdata</span> = pd.<span class="type">DataFrame</span>(boston.<span class="class"><span class="keyword">data</span>,columns = boston.feature_names)</span></span><br><span class="line"><span class="title">dfdata</span>.head()</span><br></pre></td></tr></table></figure></li>
-<li>中心化、标准正态归一化  <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">from sklearn<span class="selector-class">.preprocessing</span> import StandardScaler</span><br><span class="line">scaler = StandardScaler()</span><br><span class="line">scaler<span class="selector-class">.fit</span>(dfdata.values)</span><br><span class="line">X_input = scaler<span class="selector-class">.transform</span>(dfdata.values)</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(X_input.shape)</span></span> #输入有<span class="number">506</span>个样本，<span class="number">13</span>维特征</span><br></pre></td></tr></table></figure></li>
-<li>应用PCA进行降维  <figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">from sklearn.decomposition import <span class="keyword">PCA</span></span><br><span class="line"><span class="keyword">pca</span> = <span class="keyword">PCA</span>(n_components=7)</span><br><span class="line"><span class="keyword">pca</span>.<span class="keyword">fit</span>(X_input)</span><br><span class="line">X_output = <span class="keyword">pca</span>.transform(X_input)    </span><br><span class="line"><span class="keyword">print</span>(X_output.shape) # 降到7维特征</span><br></pre></td></tr></table></figure></li>
-<li>查看各个主成分对应的方差大小和占全部方差的比例  <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">&quot;explained_variance:&quot;</span>)</span></span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(pca.explained_variance_)</span></span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">&quot;explained_variance_ratio:&quot;</span>)</span></span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(pca.explained_variance_ratio_)</span></span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">&quot;total explained variance ratio of first 7 principal components:&quot;</span>)</span></span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(sum(pca.explained_variance_ratio_)</span></span> #前<span class="number">7</span>个主成分已经解释了样本分布的<span class="number">90%</span></span><br></pre></td></tr></table></figure></li>
-<li>可视化各个主成分贡献的方差  <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">%matplotlib inline #下面的代码可以不用写 plt.show()</span><br><span class="line">%config InlineBackend.figure_format = <span class="string">&#x27;svg&#x27;</span> #设置矢量图提高分辨率</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line"></span><br><span class="line">plt.figure()</span><br><span class="line">plt.plot(np.arange(1,8),pca.explained_variance_,<span class="attribute">linewidth</span>=2)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;components_n&#x27;</span>, <span class="attribute">fontsize</span>=16)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;explained_variance_&#x27;</span>, <span class="attribute">fontsize</span>=16)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure></li>
-<li>对降维后的数据的前两维进行散点图可视化  <figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%matplotlib inline</span></span><br><span class="line"><span class="comment">%config InlineBackend.figure_format = &#x27;svg&#x27;</span></span><br><span class="line"></span><br><span class="line">plt.scatter(<span class="symbol">X_output</span>[:,<span class="number">0</span>],<span class="symbol">X_output</span>[:,<span class="number">1</span>])</span><br><span class="line">plt.xlabel(<span class="string">&quot;components_1&quot;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&quot;components_2&quot;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure></li>
-</ul>
-
+          <h1 id="PCA主成分分析算法-Principal-Components-Analysis"><a href="#PCA主成分分析算法-Principal-Components-Analysis" class="headerlink" title="PCA主成分分析算法(Principal Components Analysis)"></a>PCA主成分分析算法(Principal Components Analysis)</h1>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/01/03/%E9%99%8D%E7%BB%B4%E7%AE%97%E6%B3%95/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -496,7 +567,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-01-06 16:13:56" itemprop="dateModified" datetime="2022-01-06T16:13:56+08:00">2022-01-06</time>
+                <time title="修改时间：2022-01-08 11:28:58" itemprop="dateModified" datetime="2022-01-08T11:28:58+08:00">2022-01-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -513,13 +584,13 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>1.3k</span>
+              <span>2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -1043,97 +1114,11 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://baishiqing.github.io/2021/12/18/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/sakula.jpg">
-      <meta itemprop="name" content="白梓晨">
-      <meta itemprop="description" content="世清的个人博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="世清の蜗居">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/12/18/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-12-18 18:00:03" itemprop="dateCreated datePublished" datetime="2021-12-18T18:00:03+08:00">2021-12-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-30 21:20:03" itemprop="dateModified" datetime="2021-12-30T21:20:03+08:00">2021-12-30</time>
-              </span>
-
-          
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-              <span>297</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>欢迎来到 <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>！ 这是你的第一篇文章，查看 <a target="_blank" rel="noopener" href="https://hexo.io/docs/">文档</a> 了解更多信息。如果你在使用 Hexo 时遇到任何问题，可以在<a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a> 上询问。<br>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/12/18/hello-world/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <div>
-      
-    </div>
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-   
-  </article>
-  
-  
-  
-
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
 
 
 
@@ -1203,7 +1188,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1274,12 +1259,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">10k</span>
+    <span title="站点总字数">11k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">9 分钟</span>
+    <span title="站点阅读时长">10 分钟</span>
 </div>
 
 

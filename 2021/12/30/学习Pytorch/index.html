@@ -28,9 +28,9 @@
 <meta property="og:description" content="Pytorch中文百科">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-12-30T13:15:43.000Z">
-<meta property="article:modified_time" content="2022-01-06T08:13:56.645Z">
+<meta property="article:modified_time" content="2022-01-08T03:28:58.422Z">
 <meta property="article:author" content="白梓晨">
-<meta property="article:tag" content="AI实践基础">
+<meta property="article:tag" content="AI基础">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://baishiqing.github.io/2021/12/30/%E5%AD%A6%E4%B9%A0Pytorch/">
@@ -141,7 +141,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">10</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">11</span></a>
 
   </li>
         <li class="menu-item menu-item-commonweal">
@@ -205,7 +205,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-01-06 16:13:56" itemprop="dateModified" datetime="2022-01-06T16:13:56+08:00">2022-01-06</time>
+                <time title="修改时间：2022-01-08 11:28:58" itemprop="dateModified" datetime="2022-01-08T11:28:58+08:00">2022-01-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -229,13 +229,13 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>1.3k</span>
+              <span>2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -253,7 +253,7 @@
 <li><a target="_blank" rel="noopener" href="https://blog.csdn.net/pan_andy/article/details/100992584">博客综述</a></li>
 <li><a target="_blank" rel="noopener" href="https://github.com/ShusenTang/Dive-into-DL-PyTorch">代码实现</a></li>
 </ul>
-<h2 id="PyTorch中Tensor的代码段合集"><a href="#PyTorch中Tensor的代码段合集" class="headerlink" title="PyTorch中Tensor的代码段合集"></a>PyTorch中Tensor的代码段合集</h2><ul>
+<h2 id="Tensor的使用"><a href="#Tensor的使用" class="headerlink" title="Tensor的使用"></a>Tensor的使用</h2><ul>
 <li><p>版本查询</p>
   <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">print</span><span class="params">(torch.__version__)</span></span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(torch.version.cuda)</span></span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(torch.backends.cudnn.version()</span></span>)</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(torch.cuda.get_device_name(<span class="number">0</span>)</span></span>)</span><br></pre></td></tr></table></figure>
 </li>
@@ -279,9 +279,12 @@
 <li><p>Torch.tensor与PIL.Image转换</p>
 <p>  <em>pytorch中的张量默认采用[N, C, H, W]的顺序，并且数据范围在[0,1]，需要进行转置和规范化</em></p>
   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># torch.Tensor -&gt; PIL.Image</span></span><br><span class="line">image = PIL.Image.fromarray(torch.clamp(tensor*<span class="number">255</span>, <span class="built_in">min</span>=<span class="number">0</span>, <span class="built_in">max</span>=<span class="number">255</span>).byte().permute(<span class="number">1</span>,<span class="number">2</span>,<span class="number">0</span>).cpu().numpy())</span><br><span class="line">image = torchvision.transforms.functional.to_pil_image(tensor)  <span class="comment">#方法二</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># PIL.Image -&gt; torch.Tensor</span></span><br><span class="line">path = <span class="string">r&#x27;./figure.jpg&#x27;</span></span><br><span class="line">tensor = torch.from_numpy(np.asarray(PIL.Image.<span class="built_in">open</span>(path))).permute(<span class="number">2</span>,<span class="number">0</span>,<span class="number">1</span>).<span class="built_in">float</span>() / <span class="number">255</span></span><br><span class="line">tensor = torchvision.transforms.functional.to_tensor(PIL.Image.<span class="built_in">open</span>(path)) <span class="comment">#方法二</span></span><br></pre></td></tr></table></figure>
-</li>
+<h2 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h2></li>
+<li>DatasetFolder 先把数据在磁盘上组织好，格式如下：</li>
 </ul>
-<ul>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">folder<span class="regexp">/class_0/</span>file1.txt</span><br><span class="line">folder<span class="regexp">/class_0/</span>file2.txt</span><br><span class="line"></span><br><span class="line">folder<span class="regexp">/class_1/</span>file3.txt</span><br><span class="line">folder<span class="regexp">/class_1/</span>...</span><br></pre></td></tr></table></figure>
+<h4 id="自定义代码加载："><a href="#自定义代码加载：" class="headerlink" title="自定义代码加载："></a>自定义代码加载：</h4><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> torchvision.datasets <span class="keyword">import</span> DatasetFolder</span><br><span class="line"><span class="keyword">from</span> pathlib <span class="keyword">import</span> <span class="type">Path</span></span><br><span class="line"># I have <span class="type">text</span> files <span class="keyword">in</span> this folder</span><br><span class="line">ds = DatasetFolder(&quot;/Users/marcin/Dev/tmp/my_text_dataset&quot;, </span><br><span class="line">    loader=lambda <span class="type">path</span>: Path(<span class="type">path</span>).read_text(),</span><br><span class="line">    extensions=(&quot;.txt&quot;,), #<span class="keyword">only</span> <span class="keyword">load</span> .txt files</span><br><span class="line">    <span class="keyword">transform</span>=lambda <span class="type">text</span>: <span class="type">text</span>[:<span class="number">100</span>], # <span class="keyword">only</span> take first <span class="number">100</span> characters</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"># Everything you need <span class="keyword">is</span> already there</span><br><span class="line">len(ds), ds.classes, ds.class_to_idx</span><br><span class="line">(<span class="number">20</span>, [<span class="string">&#x27;novels&#x27;</span>, <span class="string">&#x27;thrillers&#x27;</span>], &#123;<span class="string">&#x27;novels&#x27;</span>: <span class="number">0</span>, <span class="string">&#x27;thrillers&#x27;</span>: <span class="number">1</span>&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="网络的使用"><a href="#网络的使用" class="headerlink" title="网络的使用"></a>网络的使用</h2><ul>
 <li>神经网络层<ul>
 <li>卷积层<ul>
 <li>卷积运算：用一个模板在图像上寻找与它相似的区域，某个区域与卷积核越相似，激活值越高，从而实现特征提取</li>
@@ -352,7 +355,7 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/AI%E5%AE%9E%E8%B7%B5%E5%9F%BA%E7%A1%80/" rel="tag"><i class="fa fa-tag"></i> AI实践基础</a>
+              <a href="/tags/AI%E5%9F%BA%E7%A1%80/" rel="tag"><i class="fa fa-tag"></i> AI基础</a>
           </div>
 
         
@@ -435,7 +438,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#PyTorch%E4%B8%ADTensor%E7%9A%84%E4%BB%A3%E7%A0%81%E6%AE%B5%E5%90%88%E9%9B%86"><span class="nav-number">1.</span> <span class="nav-text">PyTorch中Tensor的代码段合集</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Tensor%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">Tensor的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86"><span class="nav-number">2.</span> <span class="nav-text">数据预处理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BB%A3%E7%A0%81%E5%8A%A0%E8%BD%BD%EF%BC%9A"><span class="nav-number">2.0.1.</span> <span class="nav-text">自定义代码加载：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">网络的使用</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -451,7 +454,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -522,12 +525,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">10k</span>
+    <span title="站点总字数">11k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">9 分钟</span>
+    <span title="站点阅读时长">10 分钟</span>
 </div>
 
 
