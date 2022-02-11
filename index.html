@@ -138,7 +138,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">14</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">13</span></a>
 
   </li>
         <li class="menu-item menu-item-commonweal">
@@ -196,7 +196,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-02-11 16:36:27 / 修改时间：18:44:46" itemprop="dateCreated datePublished" datetime="2022-02-11T16:36:27+08:00">2022-02-11</time>
+              <time title="创建时间：2022-02-11 16:36:27 / 修改时间：18:54:30" itemprop="dateCreated datePublished" datetime="2022-02-11T16:36:27+08:00">2022-02-11</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -334,123 +334,6 @@
             </div>
           <!--/noindex-->
         
-      
-    </div>
-
-    
-    
-    
-
-    <div>
-      
-    </div>
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-   
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://baishiqing.github.io/2022/01/09/excel%E5%88%86%E6%9E%90%E6%95%B0%E6%8D%AE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/sakula.jpg">
-      <meta itemprop="name" content="白梓晨">
-      <meta itemprop="description" content="世清的个人博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="世清の蜗居">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/01/09/excel%E5%88%86%E6%9E%90%E6%95%B0%E6%8D%AE/" class="post-title-link" itemprop="url">excel处理数据</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-01-09 18:13:44" itemprop="dateCreated datePublished" datetime="2022-01-09T18:13:44+08:00">2022-01-09</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-01-10 11:06:13" itemprop="dateModified" datetime="2022-01-10T11:06:13+08:00">2022-01-10</time>
-              </span>
-
-          
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-              <span>440</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><em>excel表格中，单元格为最基本的操作单位，无法进行再次拆分</em></p>
-<p><strong>若有拆分需求，都是将其余对照的单元格合并来实现</strong></p>
-<blockquote>
-<p>导入数据到PQ(Power Query)</p>
-<ol>
-<li>选中数据区域</li>
-<li>在excel中的<code>数据</code>选择<code>从表格</code></li>
-<li><code>逆透视列</code>可以将二维转换为一维：填充+逆透视+删除无用列(反之<code>透视列</code>可以将一维转换为二维)</li>
-<li>选择<code>分组依据</code>，操作<code>所有行</code>，最终实现数据合并到table</li>
-<li>选中<code>公式编辑栏</code>:在“each _”后添加[需分组的属性名]；修改”type”后面的字段类型为<code>list</code>回车</li>
-<li>在字段点击扩展按钮<code>提取值</code>，分隔符选择<code>逗号</code></li>
-<li>最后在<code>主页</code>点击<code>关闭并上载</code></li>
-</ol>
-<p>添加下拉选项</p>
-<ol>
-<li>选中需设置的单元格</li>
-<li><code>数据</code>栏中选择<code>数据验证</code>，点击<code>数据验证</code></li>
-<li>在<code>允许</code>中选择<code>序列</code>，在<code>来源</code>中填入候选值(候选值之间必须用英文的逗号)</li>
-</ol>
-<p>单元格分行</p>
-<ol>
-<li>调整待选单元格的宽度</li>
-<li>选择单元格后，点击<code>开始</code> <code>填充</code> <code>内容重排</code>既可</li>
-</ol>
-<p>单元格分列</p>
-<ol>
-<li>选择单元格，点击<code>数据</code>、<code>分列</code>，</li>
-<li>选择<code>分隔符号</code>或<code>固定宽度</code></li>
-</ol>
-</blockquote>
-<p>快捷方式：</p>
-<ul>
-<li><code>alt+enter</code>单元格内部换行</li>
-<li><code>shift+右下角</code>插入一个单元格</li>
-<li>编辑栏输入<code>=PHONETIC(</code>点击shift选择单元格</li>
-</ul>
-
       
     </div>
 
@@ -1123,6 +1006,104 @@
   
   
 
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://baishiqing.github.io/2021/12/22/md%E8%AF%AD%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/sakula.jpg">
+      <meta itemprop="name" content="白梓晨">
+      <meta itemprop="description" content="世清的个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世清の蜗居">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/22/md%E8%AF%AD%E6%B3%95/" class="post-title-link" itemprop="url">一看就懂的md语法</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-12-22 16:19:02" itemprop="dateCreated datePublished" datetime="2021-12-22T16:19:02+08:00">2021-12-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-12-31 09:38:15" itemprop="dateModified" datetime="2021-12-31T09:38:15+08:00">2021-12-31</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>999</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><em>ps:其实md的底层最终还是将我们写的语法转化为html标签了,其中<code>\</code>表转义</em><br>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/12/22/md%E8%AF%AD%E6%B3%95/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+   
+  </article>
+  
+  
+  
+
 
   
   <nav class="pagination">
@@ -1197,7 +1178,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1273,7 +1254,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">14 分钟</span>
+    <span title="站点阅读时长">13 分钟</span>
 </div>
 
 
