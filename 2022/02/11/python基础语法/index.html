@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/tree.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/tree.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"baishiqing.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="本文总结了一些细节性的语法知识">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python基础语法">
+<meta property="og:url" content="https://baishiqing.github.io/2022/02/11/python%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.html">
+<meta property="og:site_name" content="世清の蜗居">
+<meta property="og:description" content="本文总结了一些细节性的语法知识">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-02-11T08:36:27.000Z">
+<meta property="article:modified_time" content="2022-02-11T10:06:30.184Z">
+<meta property="article:author" content="白梓晨">
+<meta property="article:tag" content="基础知识">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://baishiqing.github.io/2022/02/11/python%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>python基础语法 | 世清の蜗居</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="世清の蜗居" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">世清の蜗居</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">记录生活的点滴</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">6</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">2</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">14</span></a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/commonweal/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+
+  <a href="https://github.com/BaiShiqing" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://baishiqing.github.io/2022/02/11/python%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/sakula.jpg">
+      <meta itemprop="name" content="白梓晨">
+      <meta itemprop="description" content="世清的个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世清の蜗居">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          python基础语法
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-02-11 16:36:27 / 修改时间：18:06:30" itemprop="dateCreated datePublished" datetime="2022-02-11T16:36:27+08:00">2022-02-11</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>3.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>本文总结了一些细节性的语法知识</p>
+<h2 id=""><a href="#" class="headerlink" title=" "></a> <span id="more"></span></h2><h2 id="init的作用："><a href="#init的作用：" class="headerlink" title="init的作用："></a><strong>init</strong>的作用：</h2><ol>
+<li>Python中package的标识，不能删除</li>
+<li>定义<strong>all</strong>用来模糊导入：<br>在<strong>init</strong>文件中：<code>__all__ = [&quot;module1&quot;,&quot;module2&quot;]</code></li>
+<li>批量导入外部目录的包<ul>
+<li>在<strong>init</strong>文件中：<br><code>import os 
+imoprt sys
+...</code></li>
+<li>在所需引用的文件中：<br><code>import __init__所在的包名 as na</code><br>想使用init的包需要在包前加入命名空间na</li>
+</ul>
+</li>
+<li>定义类时，相当于构造函数</li>
+</ol>
+<blockquote>
+<p>参数类型</p>
+</blockquote>
+<ul>
+<li><em>args表示可变参数(元组)  </em>ps:<code>*</code>的作用：1.函数实参，2.序列解包*</li>
+<li>**kwargs表示关键字参数(字典)</li>
+</ul>
+<blockquote>
+<p>惰性序列(迭代器)：</p>
+</blockquote>
+<p>迭代至某个元素才会去计算，节省了内存资源</p>
+<blockquote>
+<p>list与array:</p>
+<ul>
+<li>list的元素类型不必相同，但需存储指针与元素类型；array的元素类型必须相同</li>
+</ul>
+<p>range与np.arange:</p>
+<ul>
+<li>range返回类型range，可用于迭代；arange返回类型numpy.ndarray，且步长可以是小数，可用于向量使用</li>
+</ul>
+<p>zip:</p>
+<ul>
+<li>zipped=zip(a,b)打包；a,b=zip(*zipped)解包</li>
+</ul>
+<p>eval与ravel、flatten:</p>
+<h2 id="ravel-与flatten-都是将多维数组降为一维，其中flatten-不会对原矩阵产生影响；eval-执行字符串表达式并返回值"><a href="#ravel-与flatten-都是将多维数组降为一维，其中flatten-不会对原矩阵产生影响；eval-执行字符串表达式并返回值" class="headerlink" title="* ravel()与flatten()都是将多维数组降为一维，其中flatten()不会对原矩阵产生影响；eval()执行字符串表达式并返回值"></a>* ravel()与flatten()都是将多维数组降为一维，其中flatten()不会对原矩阵产生影响；eval()执行字符串表达式并返回值</h2><h2 id="os与sys："><a href="#os与sys：" class="headerlink" title="os与sys："></a>os与sys：</h2><p><em>ps:<code>__file__</code>获取当前脚本路径</em></p>
+<ul>
+<li><code>os.system()</code>运行命令</li>
+<li>os处理文件<ul>
+<li>增<ul>
+<li><code>os.mkdir()</code>创建单个目录</li>
+<li><code>os.makedirs()</code>创建多级目录</li>
+</ul>
+</li>
+<li>删<ul>
+<li><code>os.remove</code> 删除一个文件</li>
+<li><code>os.removedirs</code>删除多个文件夹</li>
+</ul>
+</li>
+<li>改 <h2 id="os-renames-old-new-递归重命名目录或文件"><a href="#os-renames-old-new-递归重命名目录或文件" class="headerlink" title="* os.renames(old,new)递归重命名目录或文件"></a>* <code>os.renames(old,new)</code>递归重命名目录或文件</h2><ul>
+<li><code>os.path.split()</code>分离文件名,返回两个值</li>
+<li><code>os.path.splitext()</code>分离扩展名,返回两个值</li>
+<li><code>os.path.join(dir,filename)</code>拼接目录名和文件名</li>
+</ul>
+</li>
+<li>查<ul>
+<li><code>os.getcwd()</code>获取所在文件夹路径    </li>
+<li><code>os.listdir</code>返回指定目录下的所有文件和文件夹</li>
+</ul>
+<hr>
+<ul>
+<li><code>os.path.abspath()</code>获取文件的绝对路径</li>
+<li><code>os.path.basename()</code>获取文件名称</li>
+<li><code>os.path.dirname()</code>获取所在文件夹路径,可嵌套使用</li>
+<li><code>os.path.isfile()</code>检验路径是否为文件</li>
+<li><code>os.path.isdir()</code>检验路径是否为文件夹</li>
+<li><code>os.path.exists()</code>检验路径是否真实存在</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id="sys-path获取列表形式的文件路径、sys-argv获取脚本参数"><a href="#sys-path获取列表形式的文件路径、sys-argv获取脚本参数" class="headerlink" title="* sys.path获取列表形式的文件路径、sys.argv获取脚本参数"></a>* <code>sys.path</code>获取列表形式的文件路径、<code>sys.argv</code>获取脚本参数</h2><h2 id="文件的输入输出"><a href="#文件的输入输出" class="headerlink" title="文件的输入输出"></a>文件的输入输出</h2><p><code>print(&#39;test1&#39;,&#39;test2&#39;,2022,sep=&#39;\n&#39;,file=open(&#39;hello.txt&#39;,&#39;w&#39;,encoding=&#39;utf-8&#39;))</code>将内容输出到文件中</p>
+<h2 id="-1"><a href="#-1" class="headerlink" title=""></a><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">read_file</span>(<span class="params">filename</span>):</span></span><br><span class="line">  <span class="comment"># with可以自动释放缓存</span></span><br><span class="line">  <span class="keyword">with</span> <span class="built_in">open</span>(filename,<span class="string">&#x27;r&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>)<span class="keyword">as</span> f:</span><br><span class="line">    content=f.readlines()</span><br><span class="line">    <span class="built_in">print</span>(content)</span><br></pre></td></tr></table></figure></h2><h2 id="序列化pickle与json"><a href="#序列化pickle与json" class="headerlink" title="序列化pickle与json"></a>序列化pickle与json</h2><ul>
+<li>api<ul>
+<li>dump写入文件</li>
+<li>dumps生成<strong>序列化</strong>字符串</li>
+<li>load文件加载</li>
+<li>loads把序列化的字符串<strong>反向解析</strong></li>
+</ul>
+</li>
+<li>不同 <ul>
+<li>json —&gt; 实现Python数据类型与通用（json）字符串之间的转换<br>所有语言都支持<br>只支持常规数据类型，如str、int、tuple、list、set、dict</li>
+<li>pickle —&gt; 实现Python数据类型与Python特定二进制格式之间的转换<br>支持python<br>支持py的所有数据类型<h3 id="json序列化"><a href="#json序列化" class="headerlink" title="json序列化"></a>json序列化</h3><blockquote>
+<p>数据类型对应关系<br>Python|Json<br>:-|-:<br>dict|Object<br>list,tuple|array<br>str|string<br>int,float,int-|numbers<br>True|true<br>False|false<br>None|null</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Python</th>
+<th style="text-align:right">Json</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Object</td>
+<td style="text-align:right">dict</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>arraylist<br>string|str<br>number(int)|int<br>number(real)|float<br>true|True<br>false|False<br>null|None</p>
+<blockquote>
+<p>注意自定义的数据类型需要转换：</p>
+<ul>
+<li><blockquote>
+<p>序列化:Python对象 —&gt; dict —&gt; JSON object</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>反序列化:JSON object -&gt; dict —&gt; Python对象</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#序列化</span></span><br><span class="line"><span class="comment">#indent缩进:JSON的array元素和object成员会以相应的缩进级别进行打印输出</span></span><br><span class="line"><span class="comment">#separators的值必须是tuple,通过赋值(&#x27;,&#x27;,&#x27;:&#x27;)来消除空白字符</span></span><br><span class="line"><span class="comment">#ensure_ascii设置为False,中文可显示</span></span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line">a=json.dumps(&#123;<span class="string">&#x27;a&#x27;</span>: <span class="string">&#x27;中国 &#x27;</span>, <span class="string">&#x27;c&#x27;</span>: <span class="literal">True</span>, <span class="string">&#x27;e&#x27;</span>: <span class="number">10</span>, <span class="string">&#x27;b&#x27;</span>: <span class="number">11.1</span>, <span class="string">&#x27;d&#x27;</span>: <span class="literal">None</span>, <span class="string">&#x27;f&#x27;</span>:[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], <span class="string">&#x27;g&#x27;</span>: (<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>)&#125;,sort_keys=<span class="literal">True</span>,separators=(<span class="string">&#x27;,&#x27;</span>,<span class="string">&#x27;:&#x27;</span>),ensure_ascii=<span class="literal">False</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;a:&quot;</span>,a)</span><br><span class="line"><span class="comment">#反序列化</span></span><br><span class="line">b=json.loads(a)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;b:&quot;</span>,b)</span><br><span class="line"></span><br><span class="line"><span class="comment">#序列化到文件中</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;test.json&#x27;</span>, <span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> fp:</span><br><span class="line">    json.dump(&#123;<span class="string">&#x27;a&#x27;</span>: <span class="string">&#x27;str中国&#x27;</span>, <span class="string">&#x27;c&#x27;</span>: <span class="literal">True</span>, <span class="string">&#x27;e&#x27;</span>: <span class="number">10</span>, <span class="string">&#x27;b&#x27;</span>: <span class="number">11.1</span>, <span class="string">&#x27;d&#x27;</span>: <span class="literal">None</span>, <span class="string">&#x27;f&#x27;</span>: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], <span class="string">&#x27;g&#x27;</span>: (<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>)&#125;, fp,indent=<span class="number">4</span>)</span><br><span class="line"><span class="comment">#反序列化文件中的内容</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;test.json&#x27;</span>, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> fp:</span><br><span class="line">    <span class="built_in">print</span>(json.load(fp))</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<h3 id="pickle序列化"><a href="#pickle序列化" class="headerlink" title="pickle序列化"></a>pickle序列化</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line">text = &#123;<span class="string">&#x27;a&#x27;</span>:<span class="string">&#x27;str&#x27;</span>, <span class="string">&#x27;c&#x27;</span>: <span class="literal">True</span>, <span class="string">&#x27;e&#x27;</span>: <span class="number">10</span>, <span class="string">&#x27;b&#x27;</span>: <span class="number">11.1</span>, <span class="string">&#x27;d&#x27;</span>: <span class="literal">None</span>, <span class="string">&#x27;f&#x27;</span>: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], <span class="string">&#x27;g&#x27;</span>:(<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>)&#125;</span><br><span class="line"><span class="comment">#序列化</span></span><br><span class="line">a = pickle.dumps(text)</span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"><span class="comment">#反序列化</span></span><br><span class="line">b = pickle.loads(a)</span><br><span class="line"><span class="built_in">print</span>(b)</span><br><span class="line"></span><br><span class="line"><span class="comment">#持久化到文件</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;pickle.txt&#x27;</span>, <span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    pickle.dump(text , f)</span><br><span class="line"><span class="comment"># 从文件中读取数据</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;pickle.txt&#x27;</span>, <span class="string">&#x27;rb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    b = pickle.load(f)</span><br><span class="line">    <span class="built_in">print</span>(b)</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>详见：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/yyds/p/6563608.html">https://www.cnblogs.com/yyds/p/6563608.html</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <div>
+      
+        <div> 
+    <div style="text-align:center;color:#bfbfbf;font-size:16px;">
+        <span>-------- 本文结束 </span> 
+            <i class="fa fa-heart"></i> 
+        <span> 感谢阅读 --------</span> 
+    </div> 
+ </div>
+      
+    </div>
+        <div class="reward-container">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.jpg" alt="白梓晨 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="白梓晨 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>白梓晨
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://baishiqing.github.io/2022/02/11/python%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" title="python基础语法">https://baishiqing.github.io/2022/02/11/python基础语法/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="tag"><i class="fa fa-tag"></i> 基础知识</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/02/11/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="prev" title="正则表达式">
+      <i class="fa fa-chevron-left"></i> 正则表达式
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+   
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC81NTAyMC8zMTQ4OA"></div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--加网易云链接-->
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=1371939273&auto=0&height=32"></iframe>    
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text"> </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#init%E7%9A%84%E4%BD%9C%E7%94%A8%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">init的作用：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ravel-%E4%B8%8Eflatten-%E9%83%BD%E6%98%AF%E5%B0%86%E5%A4%9A%E7%BB%B4%E6%95%B0%E7%BB%84%E9%99%8D%E4%B8%BA%E4%B8%80%E7%BB%B4%EF%BC%8C%E5%85%B6%E4%B8%ADflatten-%E4%B8%8D%E4%BC%9A%E5%AF%B9%E5%8E%9F%E7%9F%A9%E9%98%B5%E4%BA%A7%E7%94%9F%E5%BD%B1%E5%93%8D%EF%BC%9Beval-%E6%89%A7%E8%A1%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%B9%B6%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="nav-number">3.</span> <span class="nav-text">* ravel()与flatten()都是将多维数组降为一维，其中flatten()不会对原矩阵产生影响；eval()执行字符串表达式并返回值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#os%E4%B8%8Esys%EF%BC%9A"><span class="nav-number">4.</span> <span class="nav-text">os与sys：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#os-renames-old-new-%E9%80%92%E5%BD%92%E9%87%8D%E5%91%BD%E5%90%8D%E7%9B%AE%E5%BD%95%E6%88%96%E6%96%87%E4%BB%B6"><span class="nav-number">5.</span> <span class="nav-text">* os.renames(old,new)递归重命名目录或文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sys-path%E8%8E%B7%E5%8F%96%E5%88%97%E8%A1%A8%E5%BD%A2%E5%BC%8F%E7%9A%84%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84%E3%80%81sys-argv%E8%8E%B7%E5%8F%96%E8%84%9A%E6%9C%AC%E5%8F%82%E6%95%B0"><span class="nav-number">6.</span> <span class="nav-text">* sys.path获取列表形式的文件路径、sys.argv获取脚本参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%9A%84%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA"><span class="nav-number">7.</span> <span class="nav-text">文件的输入输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-1"><span class="nav-number">8.</span> <span class="nav-text">1
+2
+3
+4
+5
+def read_file(filename):
+  # with可以自动释放缓存
+  with open(filename,&#39;r&#39;,encoding&#x3D;&#39;utf-8&#39;)as f:
+    content&#x3D;f.readlines()
+    print(content)
+</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%8F%E5%88%97%E5%8C%96pickle%E4%B8%8Ejson"><span class="nav-number">9.</span> <span class="nav-text">序列化pickle与json</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#json%E5%BA%8F%E5%88%97%E5%8C%96"><span class="nav-number">9.1.</span> <span class="nav-text">json序列化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pickle%E5%BA%8F%E5%88%97%E5%8C%96"><span class="nav-number">9.2.</span> <span class="nav-text">pickle序列化</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="白梓晨"
+      src="/images/sakula.jpg">
+  <p class="site-author-name" itemprop="name">白梓晨</p>
+  <div class="site-description" itemprop="description">世清的个人博客</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="sidebar-button motion-element"><i class="fa fa-comment"></i>
+    Chat
+  </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/BaiShiqing" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;BaiShiqing" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:1553245346@qq.com" title="E-Mail → mailto:1553245346@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/blacksunday2" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;blacksunday2" rel="noopener" target="_blank"><i class="crosshairs fa-fw"></i>CSDN</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+       
+    </div>
+  </aside>
+ 
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">白梓晨</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">15k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">14 分钟</span>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/three-waves.min.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
+
+  <!-- 添加canvas_nest -->
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/click.js"></script>
