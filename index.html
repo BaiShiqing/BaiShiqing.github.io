@@ -138,7 +138,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">14</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">15</span></a>
 
   </li>
         <li class="menu-item menu-item-commonweal">
@@ -167,6 +167,103 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://baishiqing.github.io/2022/04/14/bat%E5%91%BD%E4%BB%A4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/sakula.jpg">
+      <meta itemprop="name" content="白梓晨">
+      <meta itemprop="description" content="世清的个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="世清の蜗居">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/04/14/bat%E5%91%BD%E4%BB%A4/" class="post-title-link" itemprop="url">bat命令</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-04-14 17:32:12 / 修改时间：17:33:56" itemprop="dateCreated datePublished" datetime="2022-04-14T17:32:12+08:00">2022-04-14</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>581</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+           <span id="more"></span>
+<h1 id="bat命令"><a href="#bat命令" class="headerlink" title="bat命令:"></a>bat命令:</h1><blockquote>
+<p>激活conda虚拟环境<br><figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">D:</span><br><span class="line">cd D:<span class="symbol">\C</span>ode<span class="symbol">\b</span>sq</span><br><span class="line">call activate C:<span class="symbol">\P</span>rogramData<span class="symbol">\A</span>naconda3<span class="symbol">\e</span>nvs<span class="symbol">\A</span>I</span><br><span class="line">python main.py</span><br></pre></td></tr></table></figure></p>
+<p>启动前端页面npm<br><figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@echo <span class="literal">off</span></span><br><span class="line">cd C:<span class="string">\Users\Administrator\Desktop\demo</span></span><br><span class="line"><span class="built_in">npm</span> run dev</span><br></pre></td></tr></table></figure></p>
+<p>启动chrome浏览器<br><figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;C:<span class="symbol">\P</span>rogram Files<span class="symbol">\G</span>oogle<span class="symbol">\C</span>hrome<span class="symbol">\A</span>pplication<span class="symbol">\c</span>hrome.exe&quot; --app=http://localhost:8080</span><br></pre></td></tr></table></figure></p>
+<p>同时启动多个bat文件<br><figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">cd</span> C:\Users\Administrator\Desktop\<span class="built_in">start</span>\resource</span><br><span class="line"><span class="built_in">start</span>  <span class="number">1</span>.bat</span><br><span class="line"><span class="built_in">start</span>  <span class="number">1</span>.bat</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>call与start的区别:</p>
+<ol>
+<li>调用范围不同；call主要用来进行批处理的<mark>内部调用</mark>,也可以调用其他可执行文件;start不能进行内部调用，但可以执行基本上所有的外部程序。</li>
+<li>调用方式不同: call另一个批处理时是在<mark>同一窗体进程</mark>里执行；start执行另外一个批处理时是在新启的窗体进程里进行。</li>
+<li>调用结果不同: call调用可以把参数或变量传给被调用的批处理，而且被调用的批处理也可以设置参数或变量以便<mark>回传</mark>;而start只能把参数或变量传给被调用的批处理。</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+   
+  </article>
+  
+  
+  
+
       
   
   
@@ -1043,104 +1140,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://baishiqing.github.io/2021/12/27/IDEA%E6%89%93%E5%8C%85/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/sakula.jpg">
-      <meta itemprop="name" content="白梓晨">
-      <meta itemprop="description" content="世清的个人博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="世清の蜗居">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/12/27/IDEA%E6%89%93%E5%8C%85/" class="post-title-link" itemprop="url">IDEA打包</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-12-27 15:59:41" itemprop="dateCreated datePublished" datetime="2021-12-27T15:59:41+08:00">2021-12-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-03-15 19:54:50" itemprop="dateModified" datetime="2022-03-15T19:54:50+08:00">2022-03-15</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
-                </span>
-            </span>
-
-          
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-              <span>1k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>IDEA打包<br>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/12/27/IDEA%E6%89%93%E5%8C%85/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <div>
-      
-    </div>
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-   
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1215,7 +1214,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-count">15</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1286,7 +1285,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">15k</span>
+    <span title="站点总字数">16k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
