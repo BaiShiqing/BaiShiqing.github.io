@@ -28,7 +28,7 @@
 <meta property="og:description" content="pytorch">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-12-30T13:15:43.000Z">
-<meta property="article:modified_time" content="2022-03-15T11:57:48.042Z">
+<meta property="article:modified_time" content="2022-04-27T09:42:32.197Z">
 <meta property="article:author" content="白梓晨">
 <meta property="article:tag" content="AI基础">
 <meta name="twitter:card" content="summary">
@@ -205,7 +205,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-03-15 19:57:48" itemprop="dateModified" datetime="2022-03-15T19:57:48+08:00">2022-03-15</time>
+                <time title="修改时间：2022-04-27 17:42:32" itemprop="dateModified" datetime="2022-04-27T17:42:32+08:00">2022-04-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -229,7 +229,7 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>2k</span>
+              <span>2.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -255,13 +255,24 @@
 <li><a target="_blank" rel="noopener" href="https://github.com/ShusenTang/Dive-into-DL-PyTorch">代码实现</a></li>
 </ul>
 <h2 id="Tensor的使用"><a href="#Tensor的使用" class="headerlink" title="Tensor的使用"></a>Tensor的使用</h2><ul>
-<li><p>版本查询</p>
-  <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">print</span><span class="params">(torch.__version__)</span></span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(torch.version.cuda)</span></span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(torch.backends.cudnn.version()</span></span>)</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(torch.cuda.get_device_name(<span class="number">0</span>)</span></span>)</span><br></pre></td></tr></table></figure>
-</li>
+<li>版本查询  <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">print</span><span class="params">(torch.__version__)</span></span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(torch.version.cuda)</span></span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(torch.backends.cudnn.version()</span></span>)</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(torch.cuda.get_device_name(<span class="number">0</span>)</span></span>)</span><br></pre></td></tr></table></figure></li>
+<li>输出GPU个数  <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">print</span><span class="params">(torch.cuda.device_count()</span></span>)</span><br></pre></td></tr></table></figure></li>
+<li>在GPU做张量运算  <figure class="highlight tp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tensor.cuda(<span class="keyword">X</span>)</span><br><span class="line"><span class="keyword">Y</span>=<span class="keyword">X</span>.cuda(device)将<span class="keyword">X</span>张量copy到某device的<span class="keyword">Y</span>张量</span><br></pre></td></tr></table></figure></li>
+<li>将网络模型copy到某device  <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">device</span> = torch.device(<span class="string">&quot;cuda&quot;</span>)</span><br><span class="line"><span class="attr">net</span>=net.to(device)</span><br></pre></td></tr></table></figure></li>
+<li>确认模型参数在GPU上  <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net<span class="selector-attr">[0]</span><span class="selector-class">.weight</span><span class="selector-class">.data</span><span class="selector-class">.device</span> 网络中第一个层的权重数据的设备</span><br></pre></td></tr></table></figure>
+<mark>一般需要放在GPU中:</li>
+<li>网络模型</li>
+<li>损失函数</li>
+<li>(训练与测试时的)输入数据<br>&lt;/mark&gt;</li>
+</ul>
+<blockquote>
+<p>GPU的数据copy到CPU很慢,GPU是硬件,cuda可以看做GPU的编译器</p>
+</blockquote>
+<ul>
 <li><p>显卡设置</p>
 <ul>
 <li>单张显卡:<br><code>device = torch.device(&#39;cuda&#39; if torch.cuda.is_available() else &#39;cpu&#39;)</code></li>
-<li>多张显卡:  <figure class="highlight moonscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="built_in">os</span></span><br><span class="line"><span class="built_in">os</span>.environ[<span class="string">&#x27;CUDA_VISIBLE_DEVICES&#x27;</span>] = <span class="string">&#x27;0,1&#x27;</span></span><br></pre></td></tr></table></figure></li>
+<li>多张显卡:  <figure class="highlight moonscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="built_in">os</span></span><br><span class="line"><span class="built_in">os</span>.environ[<span class="string">&#x27;CUDA_VISIBLE_DEVICES&#x27;</span>] = <span class="string">&#x27;0,1&#x27;</span>     </span><br></pre></td></tr></table></figure></li>
 <li>清除显存:<ul>
 <li>每次运行都清缓存:<br><code>torch.cuda.empty_cache()</code></li>
 <li>也可以使用命令行重置GPU:<br><code>nvidia-smi --gpu-reset -i [gpu_id]</code></li>
@@ -531,7 +542,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">14 分钟</span>
+    <span title="站点阅读时长">15 分钟</span>
 </div>
 
 
