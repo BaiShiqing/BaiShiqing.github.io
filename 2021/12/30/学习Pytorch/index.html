@@ -28,7 +28,7 @@
 <meta property="og:description" content="pytorch">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-12-30T13:15:43.000Z">
-<meta property="article:modified_time" content="2022-04-27T09:42:32.197Z">
+<meta property="article:modified_time" content="2022-08-16T02:43:53.877Z">
 <meta property="article:author" content="白梓晨">
 <meta property="article:tag" content="AI基础">
 <meta name="twitter:card" content="summary">
@@ -141,7 +141,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">15</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">16</span></a>
 
   </li>
         <li class="menu-item menu-item-commonweal">
@@ -205,7 +205,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-04-27 17:42:32" itemprop="dateModified" datetime="2022-04-27T17:42:32+08:00">2022-04-27</time>
+                <time title="修改时间：2022-08-16 10:43:53" itemprop="dateModified" datetime="2022-08-16T10:43:53+08:00">2022-08-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -229,7 +229,7 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>2.3k</span>
+              <span>2.4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -260,7 +260,7 @@
 <li>在GPU做张量运算  <figure class="highlight tp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tensor.cuda(<span class="keyword">X</span>)</span><br><span class="line"><span class="keyword">Y</span>=<span class="keyword">X</span>.cuda(device)将<span class="keyword">X</span>张量copy到某device的<span class="keyword">Y</span>张量</span><br></pre></td></tr></table></figure></li>
 <li>将网络模型copy到某device  <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">device</span> = torch.device(<span class="string">&quot;cuda&quot;</span>)</span><br><span class="line"><span class="attr">net</span>=net.to(device)</span><br></pre></td></tr></table></figure></li>
 <li>确认模型参数在GPU上  <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net<span class="selector-attr">[0]</span><span class="selector-class">.weight</span><span class="selector-class">.data</span><span class="selector-class">.device</span> 网络中第一个层的权重数据的设备</span><br></pre></td></tr></table></figure>
-<mark>一般需要放在GPU中:</li>
+  <mark>一般需要放在GPU中:</li>
 <li>网络模型</li>
 <li>损失函数</li>
 <li>(训练与测试时的)输入数据<br>&lt;/mark&gt;</li>
@@ -271,11 +271,25 @@
 <ul>
 <li><p>显卡设置</p>
 <ul>
-<li>单张显卡:<br><code>device = torch.device(&#39;cuda&#39; if torch.cuda.is_available() else &#39;cpu&#39;)</code></li>
-<li>多张显卡:  <figure class="highlight moonscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="built_in">os</span></span><br><span class="line"><span class="built_in">os</span>.environ[<span class="string">&#x27;CUDA_VISIBLE_DEVICES&#x27;</span>] = <span class="string">&#x27;0,1&#x27;</span>     </span><br></pre></td></tr></table></figure></li>
-<li>清除显存:<ul>
-<li>每次运行都清缓存:<br><code>torch.cuda.empty_cache()</code></li>
-<li>也可以使用命令行重置GPU:<br><code>nvidia-smi --gpu-reset -i [gpu_id]</code></li>
+<li><p>单张显卡:<br><code>device = torch.device(&#39;cuda&#39; if torch.cuda.is_available() else &#39;cpu&#39;)</code></p>
+</li>
+<li><p>多张显卡:</p>
+  <figure class="highlight moonscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="built_in">os</span></span><br><span class="line"><span class="built_in">os</span>.environ[<span class="string">&#x27;CUDA_VISIBLE_DEVICES&#x27;</span>] = <span class="string">&#x27;0,1&#x27;</span>     </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>清除显存:</p>
+<ul>
+<li><p>清除缓存区:<br><code>torch.cuda.empty_cache()</code></p>
+</li>
+<li><p>也可以使用命令行重置GPU:<br><code>nvidia-smi --gpu-reset -i [gpu_id]</code></p>
+</li>
+</ul>
+</li>
+<li><p>查看占用的显存:</p>
+<ul>
+<li><p>当前进程中torch.Tensor所占用的GPU显存:<br><code>torch.cuda.memory_allocated()</code></p>
+</li>
+<li><p>当前进程所分配的显存缓冲区<br><code>torch.cuda.memory_reserved()</code></p>
+</li>
 </ul>
 </li>
 </ul>
@@ -287,7 +301,8 @@
   <figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">NCHW</span> =<span class="meta"> [‘N’, ‘C’, ‘H’, ‘W’]</span></span><br><span class="line"><span class="attribute">images</span> = torch.randn(<span class="number">32</span>, <span class="number">3</span>, <span class="number">56</span>, <span class="number">56</span>, names=NCHW)</span><br><span class="line"><span class="attribute">images</span>.sum(&#x27;C&#x27;)</span><br><span class="line"><span class="attribute">images</span>.select(&#x27;C&#x27;, index=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Torch.tensor与np.ndarray转换</p>
-  <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">ndarray</span>=tensor.cpu().numpy()</span><br><span class="line"><span class="attr">tensor</span> = torch.from_numpy(ndarray).float()</span><br></pre></td></tr></table></figure></li>
+  <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">ndarray</span>=tensor.cpu().numpy()</span><br><span class="line"><span class="attr">tensor</span> = torch.from_numpy(ndarray).float()</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>Torch.tensor与PIL.Image转换</p>
 <p>  <em>pytorch中的张量默认采用[N, C, H, W]的顺序，并且数据范围在[0,1]，需要进行转置和规范化</em></p>
   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># torch.Tensor -&gt; PIL.Image</span></span><br><span class="line">image = PIL.Image.fromarray(torch.clamp(tensor*<span class="number">255</span>, <span class="built_in">min</span>=<span class="number">0</span>, <span class="built_in">max</span>=<span class="number">255</span>).byte().permute(<span class="number">1</span>,<span class="number">2</span>,<span class="number">0</span>).cpu().numpy())</span><br><span class="line">image = torchvision.transforms.functional.to_pil_image(tensor)  <span class="comment">#方法二</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># PIL.Image -&gt; torch.Tensor</span></span><br><span class="line">path = <span class="string">r&#x27;./figure.jpg&#x27;</span></span><br><span class="line">tensor = torch.from_numpy(np.asarray(PIL.Image.<span class="built_in">open</span>(path))).permute(<span class="number">2</span>,<span class="number">0</span>,<span class="number">1</span>).<span class="built_in">float</span>() / <span class="number">255</span></span><br><span class="line">tensor = torchvision.transforms.functional.to_tensor(PIL.Image.<span class="built_in">open</span>(path)) <span class="comment">#方法二</span></span><br></pre></td></tr></table></figure>
@@ -466,7 +481,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -537,12 +552,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">16k</span>
+    <span title="站点总字数">20k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">15 分钟</span>
+    <span title="站点阅读时长">18 分钟</span>
 </div>
 
 
